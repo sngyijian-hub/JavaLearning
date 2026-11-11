@@ -37,7 +37,9 @@ public class JavaBaseQuickDemo {
         // 6. 数组演示（main方法args就是这种格式）
         String[] dataList = {"data1","data2","data3"};
         System.out.println("数组第一条数据：" + dataList[0]);
-    }
+    
+    }// <-main
+
 
     // 静态方法：无返回，打印信息
     public static void printMsg(String msg) {
@@ -48,13 +50,19 @@ public class JavaBaseQuickDemo {
     public static int add(int x, int y) {
         return x + y;
     }
-}
+
+}// <-class
+
+
+
+//在class外定义的类，默认是包内可见的，不能加public
 
 // 实体类，和HTTP返回报文对应，不加public，放同文件
 class Response {
     int code;
     String msg;
 }
+
 
 // 备用实体类（可选）
 class User {
