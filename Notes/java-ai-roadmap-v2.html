@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java 后端 + AI 应用 · 22 周实习准备路线图（修订版 v2）</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --sub:#555; --line:#d8d8d8; --soft:#f5f5f5;
+    --accent:#1f5fa8; --accent-soft:#eaf2fb; --warn:#9a5b00; --warn-soft:#fff5e6;
+    --ok:#1f7a4d; --ok-soft:#eaf7f0;
+  }
+  @page{ size:A4; margin:18mm 16mm 18mm 16mm; }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; padding:0; color:var(--ink);
+    font-family:"Microsoft YaHei","PingFang SC","Source Han Sans SC",sans-serif;
+    font-size:10.5pt; line-height:1.62; background:#efefef;
+  }
+  .page{ width:210mm; min-height:297mm; margin:16px auto; background:#fff; padding:16mm 16mm 16mm 16mm; }
+  h1{ font-size:20pt; margin:0 0 6pt; line-height:1.3; }
+  h2{ font-size:14pt; margin:18pt 0 8pt; padding-bottom:4pt; border-bottom:2px solid var(--accent); color:var(--accent); }
+  h3{ font-size:11.5pt; margin:12pt 0 5pt; }
+  p{ margin:5pt 0; }
+  .lead{ color:var(--sub); font-size:10pt; }
+  .tag{ display:inline-block; background:var(--accent-soft); color:var(--accent); border-radius:3px; padding:1pt 7pt; font-size:9pt; margin-right:6pt; }
+  .chg{ background:var(--warn-soft); border-left:3px solid var(--warn); padding:7pt 10pt; margin:8pt 0; font-size:9.5pt; }
+  .chg b{ color:var(--warn); }
+  table{ width:100%; border-collapse:collapse; margin:8pt 0; font-size:9pt; }
+  th,td{ border:1px solid var(--line); padding:5pt 6pt; vertical-align:top; }
+  th{ background:var(--soft); font-weight:600; text-align:left; }
+  td.c,th.c{ text-align:center; }
+  tr{ page-break-inside:avoid; }
+  .stage0{ background:#eef3f8; } .stage1{ background:#f4f6f8; }
+  .stage2{ background:#f0f5f1; } .stage3{ background:#f7f4ea; }
+  .stage4{ background:#f3eef7; } .stage5{ background:#f8f2ee; } .stage6{ background:#eef7f6; }
+  .star{ color:#c47a00; white-space:nowrap; }
+  .box{ background:#fafafa; border:1px solid var(--line); border-radius:4px; padding:8pt 11pt; margin:8pt 0; }
+  .box.blue{ background:var(--accent-soft); border-color:#c3d9f1; }
+  .box.green{ background:var(--ok-soft); border-color:#bfe3d0; }
+  .box.warn{ background:var(--warn-soft); border-color:#f0d8ab; }
+  .box pre{ margin:0; white-space:pre-wrap; word-wrap:break-word; font-family:inherit; font-size:9.3pt; line-height:1.6; }
+  pre.prompt{ background:#fbfbfb; border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:4px;
+    padding:9pt 11pt; white-space:pre-wrap; word-wrap:break-word; font-size:9pt; line-height:1.58; margin:6pt 0 4pt; }
+  .copy{ font-size:8.5pt; color:#fff; background:var(--accent); border:none; border-radius:3px; padding:3pt 9pt; cursor:pointer; }
+  .copy:hover{ opacity:.85; }
+  ul,ol{ margin:5pt 0 5pt 0; padding-left:18pt; }
+  li{ margin:2.5pt 0; }
+  .small{ font-size:9pt; color:var(--sub); }
+  .k{ font-weight:600; color:var(--accent); }
+  .pagebreak{ page-break-before:always; }
+  .footer{ margin-top:14pt; border-top:1px solid var(--line); padding-top:5pt; font-size:8.5pt; color:#888; }
+  @media print{
+    body{ background:#fff; font-size:10pt; }
+    .page{ width:auto; min-height:0; margin:0; padding:0; }
+    .copy{ display:none; }
+    h2{ page-break-after:avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+<h1>Java 后端 + AI 应用 · 22 周实习准备路线图</h1>
+<p class="lead"><span class="tag">修订版 v2</span><span class="tag">学院本 · 计算机 · 大二</span><span class="tag">主线：Java 后端 → AI 应用</span></p>
+<p class="lead"><b>周期</b>：2026-11-23 ~ 2027-04-25（22 周）　<b>每周投入</b>：工作日 3h + 周末 6h ≈ 21h/周　<b>版本日期</b>：2026-11-18</p>
+
+<h2>0. 本版修订说明（相对 v1 的关键改动）</h2>
+<div class="chg">
+<b>① 目标口径校准：</b>v1 标题写"就业"，正文全是"实习"。本版统一为<b>实习准备</b>——22 周的目标是"打基础 + 出 2 个项目"，真正投递锚点见第 7 节。新增"目标岗位画像"，让"能不能拿到面试"有判断对象。
+</div>
+<div class="chg">
+<b>② AI 阶段扩容 + 减负：</b>前端由 2 周压缩为 1 周并前移到 W17（够用即止）；AI 由 4 周扩为 W18–W22 共 5 周，专注 RAG 深度。Agent / Function Calling / Spring AI 由主表移出，降为 <span class="star">★3 选学</span>，放到 22 周之后。确立原则：<b>RAG 做深 &gt; Agent 浅尝</b>。
+</div>
+<div class="chg">
+<b>③ 新增止损 / 复盘 / 缓冲机制：</b>定义"连续 2 周未过"的降级路径、每 6 周一个机动周、月末半日复盘，解决 v1"落后了只能记日志"的真空。
+</div>
+<div class="chg">
+<b>④ 验收客观化：</b>每条验收改为"可自测的动作 + 数字"，减少"能说清取舍"这类主观判断。
+</div>
+<div class="chg">
+<b>⑤ 补 22 周之后详案：</b>v1 只给了 3 个粗节点，本版展开为 2027-05 ~ 2028-03 的季度计划。
+</div>
+<div class="chg">
+<b>⑥ 统一规则口径：</b>明确"两条线"定义；计网 / OS 标注为"纯课上、不计入并行线"；vibecoding 归入主线内部规则。
+</div>
+
+<h2>1. 目标与岗位画像（先想清楚打到哪）</h2>
+<table>
+<tr><th style="width:22%">项目</th><th>内容</th></tr>
+<tr><td><b>本阶段唯一目标</b></td><td>22 周内完成"基础 + 2 个项目 + 算法一刷"，把自己从零基础带到<b>可投递实习</b>的水平。不追求"就业"，大二投全职不现实。</td></tr>
+<tr><td><b>目标岗位画像</b></td><td>主目标：Java 后端开发实习生（中小厂 / 创业公司 / 外包）；备选：AI 应用开发实习（RAG 方向）。学院本进大厂的主通道是 2028 暑期实习，不是现在。</td></tr>
+<tr><td><b>22 周交付物</b></td><td>① 公网可访问的前后端分离项目 A；② RAG 问答项目 B（含召回率 / 准确率数字）；③ GitHub 提交记录；④ LeetCode Hot 100 一刷完成；⑤ 简历初稿（2 个项目，每个 ≥3 个可讲的技术点）。</td></tr>
+<tr><td>★★★★★ 含义</td><td>决定能不能拿到面试，不可砍。★★★★ 显著加分。★★★ 有更好，时间紧可延后／跳过。</td></tr>
+</table>
+
+<h2>2. 22 周主路线图（修订后排期）</h2>
+<p class="small">起始日均为周一；每周日按第 5 节验收。标"机动"的周任务量减 30%，优先用于追赶欠账。</p>
+<table>
+<thead><tr><th style="width:7%">周次</th><th style="width:13%">起始日</th><th style="width:16%">阶段</th><th style="width:28%">核心任务</th><th class="c" style="width:9%">星级</th><th style="width:27%">验收标准（可自测）</th></tr></thead>
+<tbody>
+<tr class="stage0"><td>W1</td><td>11-23</td><td>阶段0 工程基础</td><td>Git ★5 · Maven ★4 · HTTP/RESTful ★5</td><td class="c star">★★★★★</td><td>GitHub 有仓库且 ≥10 次 commit；命令行打包 jar 并 <code>java -jar</code> 跑通；写出 6 个 RESTful 接口设计（方法+路径+入参+出参）</td></tr>
+<tr class="stage0"><td>W2</td><td>11-30</td><td>阶段0 工程基础</td><td>Linux / WSL2 ★5 · 开发环境打通</td><td class="c star">★★★★★</td><td>不看教程，纯命令行完成：建目录、搜内容、杀进程、改文件；IDEA+JDK+Maven 在 WSL2 下可编译运行</td></tr>
+<tr class="stage1"><td>W3</td><td>12-07</td><td>阶段1 Java 基础</td><td>语法 · 变量 · 流程控制 · 数组 ★5</td><td class="c star">★★★★★</td><td>每天 150 行代码全部 push（周累计 ≥750 行）；独立写出 3 个小控制台程序（猜数字 / 计算器 / 成绩统计）</td></tr>
+<tr class="stage1"><td>W4</td><td>12-14</td><td>阶段1 Java 基础</td><td>面向对象 · 封装继承多态 · 接口 · 抽象类 ★5</td><td class="c star">★★★★★</td><td>手写"图书管理"控制台程序，含增删改查 + 至少 1 处继承 + 1 个接口实现；能各举 1 例讲清三大特性</td></tr>
+<tr class="stage1"><td>W5</td><td>12-21</td><td>阶段1 Java 基础</td><td>集合 List/Map/Set ★5 · 泛型 ★5 · 异常 ★4</td><td class="c star">★★★★★</td><td>用 HashMap 完成词频统计；默写 ArrayList / LinkedList / HashMap 对比表（结构、增删查复杂度、适用场景）；自定义 1 个异常类</td></tr>
+<tr class="stage1"><td>W6</td><td>12-28</td><td>阶段1 Java 基础 <b>（机动周）</b></td><td>IO ★4 · 多线程基础 · 线程状态 ★5</td><td class="c star">★★★★★</td><td>写 1 个多线程交替打印程序；不看资料答出：进程 vs 线程、线程 5 状态、synchronized 防的是什么；落后项本周补齐</td></tr>
+<tr class="stage2"><td>W7</td><td>01-04</td><td>阶段2 数据层</td><td>JavaWeb 概念（3 天）★3 · 日志 SLF4J ★4 · JUnit ★4</td><td class="c star">★★★★</td><td>写出 Filter vs Interceptor 各 1 个使用场景；写 3 个 JUnit 测试并全部通过；日志按级别输出</td></tr>
+<tr class="stage2"><td>W8</td><td>01-11</td><td>阶段2 数据层</td><td>MySQL 建表 · 索引 · 事务 · EXPLAIN ★5</td><td class="c star">★★★★★</td><td>给一张慢 SQL 表设计索引并用 EXPLAIN 前后对比（type 从 ALL 到 ref）；说出 ACID 与 4 个隔离级别各自防的问题</td></tr>
+<tr class="stage2"><td>W9</td><td>01-18</td><td>阶段2 数据层</td><td>JDBC ★4 · MyBatis ★5 · MyBatis-Plus ★4</td><td class="c star">★★★★★</td><td>三层 CRUD 跑通（Controller→Service→Mapper）；写出 ≥3 处动态 SQL（if / where / foreach）；vibecoding 起放开 30–50%</td></tr>
+<tr class="stage3"><td>W10</td><td>01-25</td><td>阶段3 Spring</td><td>Spring 核心 IOC / AOP / Bean 生命周期 ★5</td><td class="c star">★★★★★</td><td>手写 1 个极简 IOC 容器（能注册 Bean 并按名取）；画出 Bean 生命周期；说出 AOP 的一个真实用处（日志 / 事务）</td></tr>
+<tr class="stage3"><td>W11</td><td>02-01</td><td>阶段3 Spring</td><td>Spring Boot 三层 · 参数校验 · 统一异常 · 拦截器 ★5</td><td class="c star">★★★★★</td><td>接口统一返回格式（code/msg/data）；@Valid 参数校验生效；全局异常处理返回正确错误码。<span class="small">2/6 春节，可降速</span></td></tr>
+<tr class="stage3"><td>W12</td><td>02-08</td><td>阶段3 Spring <b>（机动周）</b></td><td>项目 A 主体：用户模块 + 分页查询 ★5</td><td class="c star">★★★★★</td><td>增删改查全通；Postman 集合可导出且 ≥8 个接口；分页返回 total + 列表。<span class="small">春节，可降速</span></td></tr>
+<tr class="stage3"><td>W13</td><td>02-15</td><td>阶段3 Spring</td><td>项目 A 收尾：Excel 导出 ★4 · 日志 · 单元测试</td><td class="c star">★★★★</td><td>项目 A 本地完整跑通；README 写清启动步骤；≥5 个单测通过</td></tr>
+<tr class="stage4"><td>W14</td><td>02-22</td><td>阶段4 权限/中间件/部署</td><td>手写 JWT + 拦截器 + RBAC ★5</td><td class="c star">★★★★★</td><td>3 个角色的接口权限验证通过；不看资料答："为什么 JWT 不用 Session""token 泄露怎么办"。<span class="small">大二下开学，平衡课业</span></td></tr>
+<tr class="stage4"><td>W15</td><td>03-01</td><td>阶段4 权限/中间件/部署</td><td>Redis 缓存 · 穿透/雪崩/击穿 · 双写一致性 ★5</td><td class="c star">★★★★★</td><td>给项目 A 的热点接口加缓存并测出命中率；说出三种异常场景各 1 种解法；写出缓存更新顺序</td></tr>
+<tr class="stage4"><td>W16</td><td>03-08</td><td>阶段4 权限/中间件/部署</td><td>Docker ★5 · Nginx ★4 · 部署上线 ★5</td><td class="c star">★★★★★</td><td><b>M1：</b>Docker 镜像构建成功、Nginx 反代生效、公网地址可访问；项目 A 二次改造加 Redis 缓存 + 简单限流（简历亮点）</td></tr>
+<tr class="stage5"><td>W17</td><td>03-15</td><td>阶段5 前端（够用即止）</td><td>HTML/CSS/JS 基础 ★3 · Vue 基础 + 调接口 + 跨域 ★4</td><td class="c star">★★★★</td><td><b>M2：</b>前后端分离项目上线；Vue 页面能调后端接口；能用 CORS / 代理解决跨域并说清原因</td></tr>
+<tr class="stage6"><td>W18</td><td>03-22</td><td>阶段6 AI 应用 <b>（机动周）</b></td><td>Python 语法快速过 ★5 · FastAPI ★4</td><td class="c star">★★★★★</td><td>写出 1 个 LLM 转发服务（能调通 API 并流式返回）；落后项本周补齐</td></tr>
+<tr class="stage6"><td>W19</td><td>03-29</td><td>阶段6 AI 应用</td><td>Prompt 工程 ★5 · Embedding 原理 ★5 · 向量库 ★5</td><td class="c star">★★★★★</td><td>同一问题对比"裸问 / 优化 Prompt"的输出差异；说出 chunk 策略、余弦相似度、为什么要 rerank；向量库存 ≥100 条并可检索</td></tr>
+<tr class="stage6"><td>W20</td><td>04-05</td><td>阶段6 AI 应用</td><td>RAG 全链路 ★5（切分→向量化→检索→拼接→LLM）</td><td class="c star">★★★★★</td><td>画出 RAG 流程图；全链路跑通；能指出链路中任一环失败时的现象</td></tr>
+<tr class="stage6"><td>W21</td><td>04-12</td><td>阶段6 AI 应用</td><td>RAG 评测 ★5（数据集 + 指标对比）</td><td class="c star">★★★★★</td><td><b>M3：</b>准备 ≥20 条测试问答；产出"不同 chunk 策略 / 是否 rerank"对比表；报出召回率@5 与准确率的具体数字</td></tr>
+<tr class="stage6"><td>W22</td><td>04-19</td><td>阶段6 AI 应用</td><td>项目 B 技术亮点 + 简历打磨 ★5 + 技术复盘</td><td class="c star">★★★★★</td><td><b>M4：</b>项目 B 成型（含 3 个可讲技术点）；简历初稿（2 个项目各 ≥3 个技术点）；1 篇复盘；遗留 ★5 项清零</td></tr>
+</tbody>
+</table>
+
+<h2>3. 并行轨（W2–W22 全程贯穿，不占主表）</h2>
+<table>
+<tr><th style="width:26%">任务</th><th style="width:12%">星级</th><th style="width:24%">时间来源</th><th>要求</th></tr>
+<tr><td>数据结构与算法</td><td class="star">★★★★★</td><td>课上时间</td><td>跟学校课，当字典用；不提前自学、不刷视频课</td></tr>
+<tr><td>刷题（LeetCode Hot 100）</td><td class="star">★★★★★</td><td>每天 40–60 分钟</td><td>每天 2 题；三刷法：第二天重做 → 一周后再做 → 错题本</td></tr>
+<tr><td>计算机网络</td><td class="star">★★★★</td><td>纯课上，不计入并行线</td><td>重点 HTTP / TCP 三次握手 / HTTPS；大三下集中补八股</td></tr>
+<tr><td>操作系统</td><td class="star">★★★★</td><td>纯课上，不计入并行线</td><td>重点进程 vs 线程 / 内存管理 / 进程调度；大三下集中补八股</td></tr>
+</table>
+
+<h2>4. vibecoding 分阶段开关（主线内部规则）</h2>
+<div class="box">
+<ul>
+<li><b>W1–W8 禁止（0%）</b>：只让 AI 解释报错原文、解释概念、解释看不懂的代码；代码全部自己写。</li>
+<li><b>W9 起放开 30–50%</b>：可让 AI 生成 DTO/VO、Mapper XML、单测骨架、前端页面、Dockerfile、正则。</li>
+<li><b>必须自己写</b>：表设计、接口设计、核心业务、权限、缓存策略、RAG 检索链路。</li>
+<li><b>铁律</b>：AI 生成的每一行，你都要能讲清为什么这么写。讲不清就删掉重写。</li>
+</ul>
+</div>
+
+<h2>5. 四条执行规则 + 止损机制</h2>
+<ol>
+<li><b>一周只推一个阶段</b>，不跨阶段跳。唯一允许的并行是"主线（工程）+ 副线（408/刷题）"两条；计网/OS 纯课上，不算第三条线。</li>
+<li><b>每周日花 1 小时验收</b>：过了翻页；没过记进踩坑日志、下周补，绝不重排整个计划。</li>
+<li><b>★★★★★ 落后时，砍 ★★★ 去补 ★★★★★</b>，不要反过来。优先级错了比进度慢更致命。</li>
+<li><b>机动周</b>：W6 / W12 / W18 任务量减 30%，只用于追赶欠账，不用于提前学新内容。每月末（W4/W8/W12/W16/W20）加半日复盘。</li>
+</ol>
+<div class="box warn">
+<b>止损规则（连续 2 周周日验收不过时触发，按顺序砍）：</b>
+<ol style="margin-bottom:0">
+<li>先砍 W17 前端深度——只保留"能调接口"，Vue 细节延后；</li>
+<li>再砍项目 A 范围——降级为"单表 CRUD + 分页 + JWT"，放弃 Excel 导出；</li>
+<li>最后砍项目 B 范围——只保留"RAG 最小链路 + 1 组评测数字"，放弃 Agent 相关；</li>
+<li><b>保底不可砍（四件事）</b>：Git + HTTP + Linux、项目 A 能跑通、Hot 100 一刷、一个能讲清的 RAG 项目。砍完仍落后，接受"慢一周"，不加倍熬夜。</li>
+</ol>
+</div>
+
+<h2 class="pagebreak">6. 22 周之后：三个投递节点的季度详案</h2>
+<table>
+<tr><th style="width:20%">时间</th><th style="width:24%">主线动作</th><th>补强 / 投递</th></tr>
+<tr><td><b>2027-07-05 暑假</b></td><td>项目 A、B 二次重构 + 技术复盘；把评测数字、并发/缓存优化写进简历</td><td>尝试投第一份实习（趁暑假窗口）；算法二刷</td></tr>
+<tr><td><b>2027-09-06 大三上开学</b></td><td>补 JVM ★4 · 并发 ★4 · Spring 原理 ★4；计网/OS 八股启动</td><td>投日常实习（小厂 / 创业 / 外包都投）；算法 150 题</td></tr>
+<tr><td><b>2028-03-06 大三下</b></td><td>408 集中冲刺 2 个月；算法刷到 200–300 题</td><td>投暑期实习（学院本进大厂最现实通道）；Spring AI / Agent 作为 ★3 补学</td></tr>
+</table>
+
+<h2>7. 每日定时任务使用说明</h2>
+<p>本文档配合 WorkBuddy 定时任务使用：<b>每天自动推送"今日学习卡"</b> → 你把当天进度回给它 → 它评估、指出薄弱点、给下一步指导，并调整次日计划。下面两块提示词可直接复制。</p>
+
+<h3>7.1 每日提醒提示词（复制到定时任务）</h3>
+<div class="box blue">
+<p class="small">用法：在 WorkBuddy 新建每日定时任务，把下面整段作为任务提示词粘贴；工作目录指向本文档所在目录。</p>
+<button class="copy" onclick="cp(this)">复制提示词</button>
+<pre class="prompt" id="p1">你是我的学习教练，负责每天提醒我学习、接收我的进度反馈、评估并动态调整计划。请严格依据下面这份路线图，不要自行发明任务或改动里程碑。
+
+【路线图数据】22 周：W1 工程基础(Git/Maven/HTTP)；W2 Linux/WSL2；W3-6 Java基础(语法/OOP/集合泛型/IO多线程，W6机动)；W7 JavaWeb概念+日志+JUnit；W8 MySQL(索引/事务/EXPLAIN)；W9 JDBC+MyBatis；W10 Spring核心(IOC/AOP)；W11 SpringBoot三层+校验+统一异常；W12-13 项目A(用户模块/分页/Excel，W12机动)；W14 JWT+RBAC；W15 Redis；W16 Docker+Nginx+部署(M1)；W17 Vue+调接口(M2)；W18 Python+FastAPI(机动)；W19 Prompt+Embedding+向量库；W20 RAG全链路；W21 RAG评测(M3)；W22 项目B亮点+简历(M4)。
+并行轨：刷题 LeetCode Hot100 每天2题(40-60分钟)、数据结构跟课。
+星级：★★★★★不可砍，★★★★加分，★★★可延后。机动周 W6/W12/W18 任务量减30%，只用于追赶。
+止损：连续2周验收不过，依次砍前端深度→项目A范围→项目B范围；保底四件事不可砍：Git+HTTP+Linux、项目A能跑、Hot100一刷、能讲清的RAG项目。
+铁律：AI 生成的代码每行都要能讲清；W1-W8 禁止用 AI 写代码，W9 起可放开30-50%。
+
+【每天运行时】
+1. 用当天日期定位是第几周（W1 起始 2026-11-23，每周一递增，W22 为 2027-04-19）。若早于起始日，提示准备；若晚于 2027-04-25，按"22周后季度详案"给当月建议。
+2. 输出「今日学习卡」，严格按此格式：
+   - 标题：第 Wn 周 · 周X · 阶段名
+   - 今日任务：按 ★★★★★→★★★★→★★★ 顺序列出，每项标注【必做】/【选做】
+   - 每项预计时长（分钟），工作日合计≤210 分钟，周末≤360 分钟
+   - 每项完成标准：一个可直接自测的动作或数字
+   - 并行轨：今天刷哪 2 题（给题号或知识点）
+   - 一句"今日提醒"：结合踩坑日志或止损规则
+3. 结尾问我："请回复今天进度，每项用 完成/部分/未做 + 一句话卡点，我来评估并给明天的计划。"
+
+【收到我的进度反馈后】
+1. 逐项对照完成标准判定：✅通过 / ⚠️部分 / ❌未做。
+2. 指出薄弱点：对 ⚠️/❌ 项，判断是"概念没懂 / 环境卡住 / 时间不够 / 代码调不通"哪一类，各给一条具体诊断。
+3. 给下一步指导：针对每个薄弱点给 1 个具体动作（看哪段、写哪段代码、做哪道题），最多 3 条，按优先级排。
+4. 调整次日计划：全部通过→正常推进，可提前引入下一项★★★★；有⚠️→次日把该项排第一，砍当天★★★补时间；有❌→次日先补该项（不超过总时长50%），其余顺延、不重排全表；若周日验收连续2周不过→触发止损规则，明确告诉我本周砍哪几项。
+5. 把结果记入进度台账：日期 / Wn / 完成分 / 薄弱点 / 次日调整；结尾输出明日学习卡的精简版。
+语气简洁具体，不说空话鼓励，单次输出控制在 400 字内（台账和卡片除外）。</pre>
+</div>
+
+<h3>7.2 反馈评估规则（系统如何处理你每天的进度）</h3>
+<table>
+<tr><th style="width:16%">你的反馈</th><th style="width:22%">系统评估动作</th><th style="width:30%">薄弱点诊断</th><th>次日计划调整</th></tr>
+<tr><td>✅ 完成</td><td>对照标准确认可自测动作已达成</td><td>无；记录该知识点为"已过"</td><td>正常推进；可提前引入下一 ★★★★ 项</td></tr>
+<tr><td>⚠️ 部分</td><td>定位未完成的那一步，判断卡点类型</td><td>概念没懂 / 环境卡住 / 时间不够 / 代码调不通</td><td>该项排首位；砍当天 ★★★ 补时间</td></tr>
+<tr><td>❌ 未做</td><td>确认是能力问题还是时间问题</td><td>若"没时间"→排查当天负荷是否超标；若"不会"→回到前置知识点</td><td>次日先补该项（≤50% 时长），其余顺延，不重排全表</td></tr>
+<tr><td>周日验收不过</td><td>累计连续不过周数</td><td>判断是否系统性落后（如基础没打牢）</td><td>连续 2 周 → 触发止损规则，明确砍项清单</td></tr>
+</table>
+<div class="box green">
+<b>进度台账（系统为你维护，可复制保存）：</b>
+<pre>日期 | 周次 | 当日完成分 | 通过/部分/未做项 | 薄弱点 | 次日调整 | 累计连续未过周数
+____ | ____ | __________ | ________________ | ______ | ________ | __________________</pre>
+</div>
+
+<div class="footer">Java 后端 + AI 应用 · 22 周实习准备路线图（修订版 v2）　|　配合每日定时任务使用　|　2026-11-18</div>
+
+</div>
+<script>
+function cp(btn){
+  var pre=btn.parentNode.querySelector('pre.prompt');
+  var t=pre.innerText;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){btn.textContent='已复制';});}
+  else{var ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);btn.textContent='已复制';}
+}
+</script>
+</body>
+</html>
