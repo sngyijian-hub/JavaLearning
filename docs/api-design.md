@@ -68,7 +68,7 @@ RESTful 不是软件、不是文件类型，是**设计接口的约定**。三�
   ```json
   {
       "code":200,
-      "msg":"succcess",
+      "msg":"success",
       "data":{"id":3,"name":Rookie,"age":20}    
   }
   ```
@@ -101,7 +101,7 @@ RESTful 不是软件、不是文件类型，是**设计接口的约定**。三�
 - 路径：/api/users/{id}
 - 入参（path）：id int
 - 出参（data）：null
-- 状态码：成功 \_204_（想一想应该是 200 还是 204）；失败 \_200_
+- 状态码：成功 \_204_（想一想应该是 200 还是 204）；失败 \_404_
 - 样例 JSON：
 - ```json
   {
@@ -114,8 +114,8 @@ RESTful 不是软件、不是文件类型，是**设计接口的约定**。三�
 ### 6. 用户登录 【自己写】
 
 - 方法：POST
-- 路径：/api/users/{id}
-- 入参（body）：id int
+- 路径：/api/users/login
+- 入参（body）：username string 必填；password string 必填
 - 出参（data）：token
 - 状态码：成功 \_200_；参数错了400，用户名或密码错误401。
 - 样例 JSON：
