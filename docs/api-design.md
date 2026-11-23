@@ -53,44 +53,84 @@ RESTful 不是软件、不是文件类型，是**设计接口的约定**。三�
 
 ### 3. 查询用户详情 【自己写】
 
-- 方法：GET
-- 路径：
-- 入参（path）：
-- 出参（data）：
-- 状态码：成功 \_\_；失败 \__
+- 方法：GET    查询不修改（只读）
+
+- 路径：/api/users/{id}  
+
+- 入参（path）：id int
+
+- 出参（data）：id int; name string; age int 
+
+- 状态码：成功 \_200_；失败 \_404_
+
 - 样例 JSON：
+
+  ```json
+  {
+      "code":200,
+      "msg":"succcess",
+      "data":{"id":3,"name":Rookie,"age":20}    
+  }
+  ```
 
 ### 4. 修改用户 【自己写】
 
-- 方法：
-- 路径：
-- 入参（path + body）：
-- 出参（data）：
-- 状态码：成功 \_\_；失败 \__
+- 方法：PUT   PUT整体替换某一条(修改用户)
+
+- 路径：/api/users/{id}
+
+- 入参（path + body）：id int              决定改谁
+
+- 出参（data）：name string; age int   决定改谁的什么信息
+
+- 状态码：成功 \_200_；失败 _400_;找不到__404__
+
 - 样例 JSON：
+
+  ```json
+  {
+      "code":200,
+      "msg":"success",
+      "data":{"id":3,"name":"Rookie","age":21}   
+  }
+  ```
 
 ### 5. 删除用户 【自己写】
 
-- 方法：
-- 路径：
-- 入参（path）：
-- 出参（data）：
-- 状态码：成功 \_\_（想一想应该是 200 还是 204）；失败 \__
+- 方法：DELETE
+- 路径：/api/users/{id}
+- 入参（path）：id int
+- 出参（data）：null
+- 状态码：成功 \_204_（想一想应该是 200 还是 204）；失败 \_200_
 - 样例 JSON：
+- ```json
+  {
+      "code":204,
+      "msg":"not content",
+      "data":null  
+  }
+  ```
 
 ### 6. 用户登录 【自己写】
 
-- 方法：
-- 路径：
-- 入参（body）：
-- 出参（data）：
-- 状态码：成功 \_\_；失败 \__
+- 方法：POST
+- 路径：/api/users/{id}
+- 入参（body）：id int
+- 出参（data）：token
+- 状态码：成功 \_200_；参数错了400，用户名或密码错误401。
 - 样例 JSON：
+- ```json
+  {
+      "code":200,
+      "msg":"success",
+      "data":{"token":eyJhbGciOiJIUzI1NiJ9.xxx.yyy}
+  }
+  ```
 
 ## 三、完成标准（W1 验收）
 
-- [ ] 6 条接口都有方法、路径、入参、出参、状态码
-- [ ] 路径里只有名词，没有动词；`/users/{id}` 表示某一条用户
-- [ ] 每条响应体都是 `code` / `msg` / `data` 三段
-- [ ] 能不看文档说出：为什么新增用 201、为什么删除更适合 204
-- [ ] 文件已 commit 到 GitHub（`git add docs/api-design.md` → `git commit` → `git push`）
+- [x] 6 条接口都有方法、路径、入参、出参、状态码
+- [x] 路径里只有名词，没有动词；`/users/{id}` 表示某一条用户
+- [x] 每条响应体都是 `code` / `msg` / `data` 三段
+- [x] 能不看文档说出：为什么新增用 201、为什么删除更适合 204
+- [x] 文件已 commit 到 GitHub（`git add docs/api-design.md` → `git commit` → `git push`）

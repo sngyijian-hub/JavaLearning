@@ -5,6 +5,13 @@
 - 记忆：docx v1 与 HTML v2 均设为长期记忆；确认 v2 为权威，修正 M2 归属 W17、W18 改为 Python/FastAPI。
 - 未改动日期锚点与里程碑。等待用户回复进度后进入反馈评估流程。
 
+## 2026-11-23（W1 D1，正式开营日）
+- 现场核查：git commit=8（W1 需≥10）；`docs/api-design.md` 6 条已填但存 3 处硬错（第3条 JSON 缺引号/拼写 succcess；第5条失败码写 200 应 404，且 204 带了 body；第6条登录路径误用 `/api/users/{id}`、入参误用 id）；无 pom.xml、无 target（Maven 打包未做）。
+- 卡片主线：修接口文档 3 错 + 口述 201/204/400/401 → commit 补到 ≥10 → Maven 打包可执行 jar 跑通；WSL2 仍为 ★3 选做。
+- 并行轨启动：LC 1 两数之和（哈希）+ LC 283 移动零（双指针）。
+- W1 验收日 = 2026-11-29（周日），三项：≥10 commit / java -jar 跑通 / 6 接口设计。未触发止损。
+- 同日 13:44 重复触发一次，卡片内容不变，未重复追加台账。
+
 ## 2026-11-20（D-3，准备期）
 - 现场核查：Git 仓库 sngyijian-hub/JavaLearning 已有 7 次 commit（W1 需 ≥10）；docs/api-design.md 仅第 1、2 条完成，3–6 条仍为空模板；无 pom.xml（Maven 已装 C:\dev\maven\bin，jar 打包未做）。
 - 卡片主线：接口 3–6 落盘（抄→注→遮写）→ commit 补到 ≥10 → 手打可执行 jar；WSL2 继续砍（★★★选做）；并行轨 W2 才启动，今天只给 2 题热身（LC 1 / 283）。
