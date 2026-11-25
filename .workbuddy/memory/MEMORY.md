@@ -24,14 +24,23 @@
 ## 各周验收标准（v2 速查，细节看全文存档）
 W1 GitHub 仓库≥10 commit / jar 命令行 java -jar 跑通 / 6 个 RESTful 接口(方法+路径+入参+出参)｜W2 不看教程纯命令行建目录·搜内容·杀进程·改文件 + WSL2 下编译运行｜W3 每天150行全 push(周≥750) + 3 个控制台小程序｜W4 图书管理控制台(CRUD+继承+接口)｜W5 HashMap 词频统计 + 默写对比表 + 自定义异常｜W6 多线程交替打印 + 进程/线程/5状态/synchronized｜W7 Filter vs Interceptor 场景 + 3 个 JUnit 通过 + 分级日志｜W8 索引前后 EXPLAIN(type ALL→ref) + ACID/4 隔离级别｜W9 三层 CRUD + ≥3 处动态 SQL｜W10 手写极简 IOC + Bean 生命周期图 + AOP 用处｜W11 code/msg/data 统一返回 + @Valid + 全局异常｜W12 CRUD 全通 + Postman≥8 接口 + 分页 total｜W13 项目A 本地跑通 + README + ≥5 单测｜W14 3 角色权限验证 + JWT vs Session/token 泄露｜W15 热点接口缓存命中率 + 穿透雪崩击穿解法 + 更新顺序｜W16 M1 镜像+Nginx 反代+公网地址，项目A 加缓存限流｜W17 M2 前后端分离上线 + Vue 调接口 + CORS/代理｜W18 LLM 转发服务(流式) + 补欠账｜W19 裸问 vs 优化 Prompt 对比 + chunk/余弦/rerank + 向量库≥100 条｜W20 RAG 流程图 + 全链路跑通 + 故障现象｜W21 M3 ≥20 条测试问答 + chunk/rerank 对比表 + 召回率@5/准确率｜W22 M4 项目B 3 技术点 + 简历初稿 + 1 篇复盘 + ★5 清零。
 
+## 刷题专题与周次的对应（2026-11-23 定；不改里程碑与 Hot100 一刷目标，只定专题顺序）
+- 现在–W2：**数组 + 双指针**，只用 for/if 能写出来的题：283 移动零 / 27 移除元素 / 26 删除有序数组重复项 / 121 买卖股票 / 88 合并两个有序数组 / 136 只出现一次的数字。
+- W3（学完 Java 集合后）：哈希类 → 1 两数之和 / 49 字母异位词分组 / 128 最长连续序列。
+- W5（学完链表）：链表专题。
+- W7 之后：栈与队列、二叉树（等学校数据结构课讲到树）。
+- W10 之后：回溯、动态规划。
+- 用户 2026-11-23 明确表示这些算法「都没学过」→ 刷题即学套路，不是复习；每个专题先看 20 分钟套路讲解再做 3–5 题。方法细节见用户级 MEMORY.md「刷算法题的方法」。
+
 ## 用户约定的文件存放规则（2026-11-19）
 - 我整理的知识点/笔记/总结/模板，凡 `.md`/`.doc`/`.docx`/`.pdf` 等文档格式，默认写到 `C:/Users/Songyj/Desktop/JavaLearing/Notes/`，不写工作区根目录或 `docs/`（用户明确指定时除外）。
 - 例外：路线图存档与记忆文件放 `.workbuddy/memory/reference/`；进度台账放 `C:/Users/Songyj/WorkBuddy/2026-11-18-21-54-27/study-progress.md`。
 - 历史遗留：W1 接口设计模板最初写在 `docs/api-design.md`，后续同类文档一律直接进 `Notes/`。
 
-## 当前状态（2026-11-19）
+## 当前状态（更新至 2026-11-23 晚）
 - 已具备：JDK17(Temurin 17.0.21)、Maven 3.9.9(C:\dev\maven, 阿里云镜像)、IDEA Community 2025.3、Git 笔记与仓库 README 已写、Java 语法基础 demo 已跑通（变量/if/for/数组/实体类/静态方法）。
-- 欠账：GitHub 仓库≥10 commit 未确认、HTTP 6 接口设计❌、Maven 打包+java -jar 未验证❌、WSL2 未确认⚠️。
+- W1 进展：Git commit 已达 10 次✅；6 条 RESTful 接口设计已完成✅（`docs/api-design.md`，Rookie 引号/username·password 已修正）。
+- 欠账：Maven 打包 + `java -jar` 未验证❌；WSL2 未确认⚠️；接口文档第 5、6 条 JSON 样例曾被误删，需确认已补回。
 - 环境类卡点已解除，后续不再重复排查。
 
 ## 定时任务

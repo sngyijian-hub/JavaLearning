@@ -54,37 +54,27 @@ RESTful 不是软件、不是文件类型，是**设计接口的约定**。三�
 ### 3. 查询用户详情 【自己写】
 
 - 方法：GET    查询不修改（只读）
-
-- 路径：/api/users/{id}  
-
+- 路径：/api/users/{id}
 - 入参（path）：id int
-
-- 出参（data）：id int; name string; age int 
-
-- 状态码：成功 \_200_；失败 \_404_
-
+- 出参（data）：id int; name string; age int
+- 状态码：成功 \_200\_；失败 \_404_
 - 样例 JSON：
 
   ```json
   {
       "code":200,
       "msg":"success",
-      "data":{"id":3,"name":Rookie,"age":20}    
+      "data":{"id":3,"name":"Rookie","age":20}    
   }
   ```
 
 ### 4. 修改用户 【自己写】
 
 - 方法：PUT   PUT整体替换某一条(修改用户)
-
 - 路径：/api/users/{id}
-
 - 入参（path + body）：id int              决定改谁
-
 - 出参（data）：name string; age int   决定改谁的什么信息
-
-- 状态码：成功 \_200_；失败 _400_;找不到__404__
-
+- 状态码：成功 \_200\_；失败 *400*;找不到\_\_404\__
 - 样例 JSON：
 
   ```json
@@ -101,13 +91,13 @@ RESTful 不是软件、不是文件类型，是**设计接口的约定**。三�
 - 路径：/api/users/{id}
 - 入参（path）：id int
 - 出参（data）：null
-- 状态码：成功 \_204_（想一想应该是 200 还是 204）；失败 \_404_
+- 状态码：成功 \_204\_（想一想应该是 200 还是 204）；失败 \_404_
 - 样例 JSON：
 - ```json
   {
-      "code":204,
-      "msg":"not content",
-      "data":null  
+    "code": 204,
+    "msg": "no content",
+    "data": null
   }
   ```
 
@@ -117,13 +107,13 @@ RESTful 不是软件、不是文件类型，是**设计接口的约定**。三�
 - 路径：/api/users/login
 - 入参（body）：username string 必填；password string 必填
 - 出参（data）：token
-- 状态码：成功 \_200_；参数错了400，用户名或密码错误401。
+- 状态码：成功 \_200\_；参数错了400，用户名或密码错误401。
 - 样例 JSON：
 - ```json
   {
-      "code":200,
-      "msg":"success",
-      "data":{"token":eyJhbGciOiJIUzI1NiJ9.xxx.yyy}
+    "code": 200,
+    "msg": "success",
+    "data": { "token": "eyJhbGciOiJIUzI1NiJ9.xxx.yyy" }
   }
   ```
 

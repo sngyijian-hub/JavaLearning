@@ -5,6 +5,20 @@
 - 记忆：docx v1 与 HTML v2 均设为长期记忆；确认 v2 为权威，修正 M2 归属 W17、W18 改为 Python/FastAPI。
 - 未改动日期锚点与里程碑。等待用户回复进度后进入反馈评估流程。
 
+## 2026-11-24（W1 D2，周二）
+- 现场核查：docs/api-design.md 仍为 M（未提交）；commit 已≥10；Maven 打包仍未开始。
+- 卡片主线：补回第 5、6 条 JSON 样例并 commit → 手打 pom.xml + mvn package + java -jar → WSL2 仅 wsl --status 检查（选做）。
+- 并行轨：LC 27 移除元素 + LC 26 删除有序重复项（若昨日 283/1 未做则先补）。
+- 提醒聚焦「改一半不收尾」失分模式：每完成一项立刻 commit。
+- 等待用户进度反馈后走评估流程。
+
+## 2026-11-25（W1 D3，周三）
+- 现场核查：commit=10 ✅ 但 `docs/api-design.md` 仍为 M（已第 3 天未提交）；第 5、6 条 JSON 样例已补回 ✅；仍无 pom.xml / src / target（Maven 完全未开始）；mvn 3.9.9 与 JDK17 命令均正常。
+- 卡片主线：①先 commit+push 接口文档收尾（15min）②Maven 三步：手写 pom → 建 src/main/java 并给类加 package → mvn clean package + java -jar（105min）③WSL2 仅状态检查（选做）。
+- 并行轨：LC 121 + LC 88（数组双指针），27/26 若未做先补。
+- 风险：W1 验收 11-29 仅剩 Maven 一项未过，若 11-26 仍未跑通则 11-27 起砍掉全部 ★3 与 WSL2。
+- 等待用户进度反馈后走评估流程。
+
 ## 2026-11-23（W1 D1，正式开营日）
 - 现场核查：git commit=8（W1 需≥10）；`docs/api-design.md` 6 条已填但存 3 处硬错（第3条 JSON 缺引号/拼写 succcess；第5条失败码写 200 应 404，且 204 带了 body；第6条登录路径误用 `/api/users/{id}`、入参误用 id）；无 pom.xml、无 target（Maven 打包未做）。
 - 卡片主线：修接口文档 3 错 + 口述 201/204/400/401 → commit 补到 ≥10 → Maven 打包可执行 jar 跑通；WSL2 仍为 ★3 选做。
